@@ -2,7 +2,17 @@
   padding: 70px 0 0 140px;
   background-image: url("../../../assets/img/landing-bg.jpeg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
-  padding-bottom: 750px;
+  padding-bottom: 830px;
+}
+
+.react-datepicker-wrapper {
+  input {
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    padding: 12px 15px;
+    width: 300px;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+  }
 }
