@@ -1,0 +1,23 @@
+.wrapper {
+  width: 450px;
+  background: #fff;
+  border-radius: 4px;
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 30px 10px;
+  }
+}
+.calendar {
+    padding: 20px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    li {
+      width: calc(100%/7);
+    }
+  }
+}
