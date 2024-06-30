@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import './Calendar.scss'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import { ru } from "date-fns/locale/ru";
 registerLocale("ru", ru);
 
-const Landing = () => {
+const Calendar = () => {
   const [startDate, setStartDate] = useState(new Date("2024/06/08"));
   const [endDate, setEndDate] = useState(new Date("2024/06/10"));
 
@@ -32,4 +33,5 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Calendar;
+
