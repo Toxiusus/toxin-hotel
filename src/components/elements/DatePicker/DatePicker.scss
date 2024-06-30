@@ -1,12 +1,18 @@
-.wrapper {
-  width: 450px;
-  background: #fff;
-  border-radius: 4px;
+.landing {
+  padding: 70px 0 0 140px;
+  background-image: url("../../../assets/img/landing-bg.jpeg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  padding-bottom: 830px;
+}
 
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px 30px 10px;
+.react-datepicker-wrapper {
+  input {
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    padding: 12px 15px;
+    width: 300px;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
   }
 }
