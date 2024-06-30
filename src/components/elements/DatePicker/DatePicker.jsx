@@ -1,67 +1,40 @@
-import React from "react";
-import './DatePicker.scss'
+import "./Landing.scss";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { registerLocale, setDefaultLocale } from  "react-datepicker";
+import { ru } from 'date-fns/locale/ru';
+registerLocale('ru', ru)
 
-const DatePicker = () => {
+const Landing = () => {
+  const [startDate, setStartDate] = useState(new Date("2024/06/08"));
+  const [endDate, setEndDate] = useState(new Date("2024/06/10"));
+
   return (
-    <div className="wrapper">
-      <header>
-        <p className="current-date">Сентябрь 2022</p>
-        <div className="icons">
-          <span className="material-symbols-rounded">chevron_left</span>
-          <span className="material-symbols-rounded">chevron_right</span>
+    <div className="landing">
+      <div className="landing__container container">
+        <div className="datepicker">
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            selectsStart
+            startDate={startDate}
+            endDate={endDate}
+            locale="ru"
+          />
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            selectsEnd
+            startDate={startDate}
+            endDate={endDate}
+            minDate={startDate}
+            locale="ru"
+          />
         </div>
-      </header>
-      <div className="calendar">
-        <ul className="weeks list-reset">
-          <li>Пн</li>
-          <li>Вт</li>
-          <li>Ср</li>
-          <li>Чт</li>
-          <li>Пт</li>
-          <li>Сб</li>
-          <li>Вс</li>
-        </ul>
-        <ul className="days list-reset">
-          <li>28</li>
-          <li>29</li>
-          <li>30</li>
-          <li>31</li>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-          <li>13</li>
-          <li>14</li>
-          <li>15</li>
-          <li>16</li>
-          <li>17</li>
-          <li>18</li>
-          <li>19</li>
-          <li>20</li>
-          <li>21</li>
-          <li>22</li>
-          <li>23</li>
-          <li>24</li>
-          <li>25</li>
-          <li>26</li>
-          <li>27</li>
-          <li>28</li>
-          <li>29</li>
-          <li>30</li>
-          <li>31</li>
-          <li>1</li>
-        </ul>
       </div>
     </div>
   );
 };
 
-export default DatePicker;
+export default Landing;
