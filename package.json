@@ -1,0 +1,41 @@
+{
+  "name": "toxin-hotel",
+  "version": "1.0.0",
+  "description": "toxin hotel by toxius",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "test": "cross-env NODE_ENV=development echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "dmai",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^12.0.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "favicons": "^7.2.0",
+    "favicons-webpack-plugin": "^6.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "pug-plugin": "^5.3.0",
+    "sass": "^1.80.6",
+    "sass-loader": "^16.0.3",
+    "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0",
+    "xml-loader": "^1.2.1"
+  },
+  "dependencies": {
+    "jquey": "^0.0.1-security",
+    "normalize.css": "^8.0.1"
+  }
+}

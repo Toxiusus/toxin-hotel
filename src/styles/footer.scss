@@ -1,0 +1,19 @@
+.footer {
+  font-family: "Montserrat";
+  font-size: 14px;
+  padding: 18px 140px;
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__description {
+  width: 260px;
+}
+
+.footer__text{
+    line-height: 24px;
+}

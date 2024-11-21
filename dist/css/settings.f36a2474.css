@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page__body {
+  font-family: "roboto";
+}
+
+.container {
+  margin: 0 auto;
+  max-width: calc(var(--container-width) + var(--container-offset) * 2);
+}
