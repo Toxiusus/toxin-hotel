@@ -1,31 +1,21 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet", href="../styles/header.scss")
-        link(rel="stylesheet", href="../styles/settings.scss")
-        link(rel="stylesheet", href="../styles/fonts.scss")
-        link(rel="stylesheet", href="../styles/normalize.scss")
-    body
-        header(class="header")
-            div(class="header__container container")
-                a(class="header__logo" href="/")
-                    img(src="../images/Logo.svg" alt="logo")
-                div(class="header__details")
-                    ul(class="header__list list-reset")
-                        li(class="header__item")
-                            a(class="header__link" href="/") О нас
-                        li(class="header__item")
-                            a(class="header__link" href="/") Услуги
-                                img(class="header__img" src="../images/arrow-down.svg" alt="arrow-down")
-                        li(class="header__item")
-                            a(class="header__link" href="/") Вакансии
-                        li(class="header__item")
-                            a(class="header__link" href="/") Новости
-                        li(class="header__item")
-                            a(class="header__link" href="/") Соглашения
-                                img(class="header__img" src="../images/arrow-down.svg" alt="arrow-down")
-                    div(class="header__buttons")
-                        button(class="header__button header__enter" aria-label="enter") Войти
-                        button(class="header__button header__registration" aria-label="registration") Зарегистрироваться
+header(class="header")
+    div(class="header__container container")
+        a(class="header__logo" href="/")
+            img(src="../images/Logo.svg" alt="logo")
+        div(class="header__details")
+            ul(class="header__list list-reset")
+                li(class="header__item")
+                    a(class="header__link" href="/") О нас
+                li(class="header__item")
+                    a(class="header__link" href="/") Услуги
+                        img(class="header__img" src="../images/arrow-down.svg" alt="arrow-down")
+                li(class="header__item")
+                    a(class="header__link" href="/") Вакансии
+                li(class="header__item")
+                    a(class="header__link" href="/") Новости
+                li(class="header__item")
+                    a(class="header__link" href="/") Соглашения
+                        img(class="header__img" src="../images/arrow-down.svg" alt="arrow-down")
+            div(class="header__buttons")
+                button(class="header__button header__enter" aria-label="enter") Войти
+                button(class="header__button header__registration" aria-label="registration") Зарегистрироваться
