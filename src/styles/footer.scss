@@ -1,6 +1,4 @@
 .footer {
-  font-family: "Montserrat";
-  font-size: 14px;
   padding: 18px 140px;
 }
 
@@ -14,6 +12,18 @@
   width: 260px;
 }
 
-.footer__text{
-    line-height: 24px;
+.footer__description-text{
+  margin-top: 20px;
+}
+
+.footer__link {
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.footer__subscribe{
+  width: 260px;
+}
+
+.footer__list{
+  flex: 1 1 200px;
 }
