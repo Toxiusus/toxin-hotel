@@ -3,27 +3,30 @@
 }
 
 .footer__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
 }
 
 .footer__description {
   width: 260px;
 }
 
-.footer__description-text{
+.footer__description-text {
   margin-top: 20px;
+}
+
+.footer__list{
+  margin-bottom: 20px;
 }
 
 .footer__link {
   color: rgba(31, 32, 65, 0.5);
 }
 
-.footer__subscribe{
+.footer__subscribe {
   width: 260px;
 }
 
-.footer__list{
-  flex: 1 1 200px;
+.footer__bottom{
+  
 }
