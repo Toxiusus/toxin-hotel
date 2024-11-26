@@ -1,8 +1,10 @@
 .footer {
-  padding: 18px 140px;
+  background-color: #fff;
 }
 
 .footer__container {
+  max-width: 1440px;
+  min-width: 320px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
