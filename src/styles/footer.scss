@@ -7,6 +7,17 @@
   padding: 100px 140px;
 }
 
-.footer__links{
+.footer__about {
+  max-width: 260px;
+}
+
+.footer__links {
   display: flex;
+  justify-content: space-between;
+  min-width: 560px;
+}
+
+.footer__subscribe {
+  margin-left: 20px;
+  max-width: 260px;
 }
