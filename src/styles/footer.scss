@@ -2,12 +2,11 @@
   background-color: #fff;
 }
 
-.footer__container {
-  max-width: 1440px;
-  min-width: 320px;
-}
-
 .footer__top {
   display: flex;
   padding: 100px 140px;
+}
+
+.footer__links{
+  display: flex;
 }
