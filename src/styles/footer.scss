@@ -5,40 +5,6 @@
 .footer__container {
   max-width: 1440px;
   min-width: 320px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
 }
 
-.footer__description {
-  width: 260px;
-}
 
-.footer__description-text {
-  margin-top: 20px;
-}
-
-.footer__list {
-  margin-bottom: 20px;
-}
-
-.footer__link {
-  color: rgba(31, 32, 65, 0.5);
-}
-
-.footer__subscribe {
-  width: 260px;
-}
-
-.footer__bottom {
-  margin: 0 auto;
-  padding: 23px 15px;
-  max-width: 1470px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer__icons {
-  display: flex;
-  text-align: center;
-  gap: 20px;
-}
