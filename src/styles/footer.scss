@@ -44,3 +44,14 @@
   margin-bottom: 20px;
   line-height: 24px;
 }
+
+.footer__bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 23px 140px;
+}
+
+.footer__social{
+  display: flex;
+  gap: 20px;
+}
