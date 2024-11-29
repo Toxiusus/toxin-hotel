@@ -2,12 +2,13 @@
   background-color: #fff;
 }
 
-.footer__about-text{
+.footer__about-text {
   margin-top: 20px;
   line-height: 24px;
 }
 
 .footer__top {
+  border-bottom: 1px solid rgba(31, 32, 65, 0.25);
   display: flex;
   justify-content: space-between;
   padding: 100px 140px;
@@ -28,7 +29,7 @@
   max-width: 260px;
 }
 
-.footer__item{
+.footer__item {
   margin-bottom: 20px;
 }
 
@@ -36,22 +37,29 @@
   color: rgba(31, 32, 65, 0.5);
 }
 
-.footer__title{
+.footer__title {
   margin-bottom: 21px;
 }
 
-.footer__subscribe-text{
+.footer__subscribe-text {
   margin-bottom: 20px;
   line-height: 24px;
 }
 
-.footer__bottom{
+.footer__bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 23px 140px;
 }
 
-.footer__social{
+.footer__social {
   display: flex;
+  align-items: center;
   gap: 20px;
+}
+
+.footer__social-link{
+  display: flex;
+  align-items: center;
 }
