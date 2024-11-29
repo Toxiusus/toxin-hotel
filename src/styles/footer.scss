@@ -3,8 +3,8 @@
 }
 
 .footer__top {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+  display: flex;
+  justify-content: space-between;
   padding: 100px 140px;
 }
 
@@ -23,12 +23,18 @@
   max-width: 260px;
 }
 
-.footer__subscribe-input {
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  color: rgba(31, 32, 65, 0.75);
-  font: 400 1rem / 24px montserrat, arial, sans-serif;
-  height: 42px;
-  outline: none;
-  padding: 0 0 0 14px;
+.footer__item{
+  margin-bottom: 20px;
+}
+
+.footer__link {
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.footer__title{
+  margin-bottom: 21px;
+}
+
+.footer__subscribe-text{
+  margin-bottom: 20px;
 }

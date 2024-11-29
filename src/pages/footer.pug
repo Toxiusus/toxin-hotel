@@ -2,48 +2,43 @@ footer(class="footer")
     div(class="footer__container container")
         div(class="footer__top")
             div(class="footer__about")
-                a(href="/")
+                a(href="#")
                     img(src="../images/Logo.svg" alt="logo") 
                 p(class="footer__about-text") Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-            div(class="footer__links")
-                div(class="footer__links-column")
-                    div(class="footer__links-box")
-                        h3(class="footer__title") навигация
-                        ul(class="footer__links-list list-reset")
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") О нас
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") Новости
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") Служба поддержки
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") Услуги
-                div(class="footer__links-column")
-                    div(class="footer__links-box")
-                        h3(class="footer__title") навигация
-                        ul(class="footer__links-list list-reset")
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") О нас
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") Новости
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") Служба поддержки
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") Услуги
-                div(class="footer__links-column")
-                    div(class="footer__links-box")
-                        h3(class="footer__title") навигация
-                        ul(class="footer__links-list list-reset")
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") О нас
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") Новости
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") Служба поддержки
-                            li(class="footer__links-item")
-                                a(class="footer__links-link" href="/") Услуги
+            div(class="footer__column")
+                h3(class="footer__title") навигация
+                ul(class="list-reset footer__list")
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") О нас
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") Новости
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") Служба поддержки
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") Услуги
+            div(class="footer__column")
+                h3(class="footer__title") о нас
+                ul(class="list-reset footer__list")
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") О сервисе
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") Наша команда
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") Вакансии
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") Инвесторы
+            div(class="footer__column")
+                h3(class="footer__title") Служба поддержки
+                ul(class="list-reset footer__list")
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") Соглашения
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") Сообщества
+                    li(class="footer__item")
+                        a(class="footer__link" href="#") Связь с нами
             div(class="footer__subscribe")
-                h3 навигация
-                p(class="footer__subscribe-text")
-                input(class="footer__subscribe-input")
+                h3(class="footer__title") навигация
+                p(class="footer__subscribe-text") Получайте специальные предложения и новости сервиса
+                form(action="footer__form")
+                    input(class="footer__input" type="email" placeholder="Email")
 
