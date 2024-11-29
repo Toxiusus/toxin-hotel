@@ -72,3 +72,18 @@ ul {
 a {
   text-decoration: none;
 }
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+.form__input {
+  padding-left: 15px;
+  padding-right: 60px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  width: 260px;
+  height: 44px;
+  background: rgb(255, 255, 255);
+}
