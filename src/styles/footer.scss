@@ -2,6 +2,11 @@
   background-color: #fff;
 }
 
+.footer__about-text{
+  margin-top: 20px;
+  line-height: 24px;
+}
+
 .footer__top {
   display: flex;
   justify-content: space-between;
@@ -37,4 +42,5 @@
 
 .footer__subscribe-text{
   margin-bottom: 20px;
+  line-height: 24px;
 }
