@@ -8,7 +8,6 @@
 }
 
 .footer__top {
-  border-bottom: 1px solid rgba(31, 32, 65, 0.25);
   display: flex;
   justify-content: space-between;
   padding: 100px 140px;
@@ -47,6 +46,8 @@
 }
 
 .footer__bottom {
+  border-top: 1px solid rgba(31, 32, 65, 0.1);
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,7 +60,7 @@
   gap: 20px;
 }
 
-.footer__social-link{
+.footer__social-link {
   display: flex;
   align-items: center;
 }
