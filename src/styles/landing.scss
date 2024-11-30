@@ -1,0 +1,15 @@
+.landing {
+  background-image: url("../images/landing-bg.jpeg");
+  width: 1440px;
+  height: 830px;
+}
+
+.landing__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: 320px;
+  padding: 70px 0 0 140px;
+}
