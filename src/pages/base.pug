@@ -1,4 +1,5 @@
-- var siteTitle = 'title of this site';
+block vars
+    - var siteTitle = 'title of this site';
 
 doctype html
 html(lang="en")
@@ -11,6 +12,6 @@ html(lang="en")
         link(rel="stylesheet" href="../styles/settings.scss")
         link(rel="stylesheet" href="../styles/fonts.scss")
         link(rel="stylesheet" href="../styles/normalize.scss")
-        title #{title}
+        title #{siteTitle}
     body
         block content
