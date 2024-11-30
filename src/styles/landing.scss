@@ -1,7 +1,9 @@
 .landing {
+  min-height: calc(100vh - 12px);
   background-image: url("../images/landing-bg.jpeg");
-  width: 1440px;
-  height: 830px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .landing__container {
