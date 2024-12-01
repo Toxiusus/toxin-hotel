@@ -50,8 +50,10 @@
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 23px 140px;
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: 320px;
+  padding: 22.5px 140px;
 }
 
 .footer__social {
@@ -65,7 +67,7 @@
   align-items: center;
 }
 
-.footer__btn{
+.footer__btn {
   position: absolute;
   right: 0;
   margin-right: 15px;
