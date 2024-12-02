@@ -1,3 +1,5 @@
+const webpack = require("webpack");
+const path = require("path");
 const PugPlugin = require("pug-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
@@ -18,6 +20,11 @@ module.exports = {
       },
     }),
     new FaviconsWebpackPlugin("./src/assets/favicon.ico"),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery",
+    }),
   ],
   module: {
     rules: [
