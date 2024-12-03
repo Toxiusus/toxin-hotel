@@ -9,5 +9,7 @@ block content
     section(class="landing")
       div(class="landing__container container")
         div(class="landing__roomcard")
-        p(class="landing__text")
+          input(type="text" id="datepicker" placeholder="Выберите дату")
+          script(src="../index.js") <!-- Подключите ваш скомпилированный файл -->
+          p(class="landing__text")
   include footer
