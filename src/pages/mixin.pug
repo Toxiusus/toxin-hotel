@@ -4,12 +4,13 @@ mixin datepicker
             input(class="datepicker__input" type="text" placeholder="ДД.ММ.ГГГГ")
             input(class="datepicker__input" type="text" placeholder="ДД.ММ.ГГГГ")
             div(class="datepicker__box")
-                div(class="datepicker__year")
-                    button(class="btn-reset")
-                        img(src="../images/arrow-down.svg", alt="arrow-down")
-                    h2 Август 2019
-                    button(class="btn-reset")
-                        img(src="../images/arrow-down.svg", alt="arrow-down")
+                div(class="datepicker__header")
+                    button(class="btn-reset") next
+                    div
+                        select(class="datepicker__month")
+                            option
+                        input(class="datepicker__year" value="2024" type="number")
+                    button(class="btn-reset") prev
                 div(class="datepicker__days")
                     span Пн
                     span Вт
@@ -54,6 +55,6 @@ mixin datepicker
                     button 30
                     button 31
                     button 1
-                div(class="datepicker__buttons")
+                div(class="datepicker__footer")
                     button очистить
                     button применить

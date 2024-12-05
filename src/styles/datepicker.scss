@@ -8,42 +8,37 @@
   background: rgb(255, 255, 255);
 }
 
-.datepicker__container{
-    position: relative;
+.datepicker__container {
+  position: relative;
 }
 
-.datepicker__box{
-    position: absolute;
-    top: 100%;
-    z-index: 100;
-    margin-top: 2px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 320px;
-    height: 369px;
+.datepicker__box {
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  margin-top: 2px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 320px;
+  height: 369px;
 }
 
-.datepicker__year{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    margin-bottom: 30px;
+.datepicker__days,
+.datepicker__dates {
+  display: grid;
+  grid-template-columns: repeat(7, 32px);
+  gap: 10px;
+  margin-block: 10px;
 }
 
-.datepicker__days,.datepicker__dates{
-    display: grid;
-    grid-template-columns: repeat(7,32px);
-    gap: 10px;
-    margin-block: 10px;
+.datepicker__days {
+  text-align: center;
 }
 
-.datepicker__days{
-    text-align: center;
-}
-
-.datepicker__dates{
-    font-size: 14px;
-    font-weight: 400;
-    color: rgba(31, 32, 65, 0.25);
-font-family: Montserrat;
+.datepicker__dates {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.25);
+  font-family: Montserrat;
 }
