@@ -7,9 +7,7 @@ mixin datepicker
                 div(class="datepicker__header")
                     button(class="btn-reset") next
                     div
-                        select(class="datepicker__month")
-                            option
-                        input(class="datepicker__year" value="2024" type="number")
+                        h3 Август 2024
                     button(class="btn-reset") prev
                 div(class="datepicker__days")
                     span Пн
@@ -56,5 +54,5 @@ mixin datepicker
                     button 31
                     button 1
                 div(class="datepicker__footer")
-                    button очистить
-                    button применить
+                    button(class="datepicker__delete") очистить
+                    button(class="datepicker__submit") применить
