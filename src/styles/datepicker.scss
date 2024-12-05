@@ -42,3 +42,9 @@
   color: rgba(31, 32, 65, 0.25);
   font-family: Montserrat;
 }
+
+.datepicker__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
