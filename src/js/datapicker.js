@@ -27,39 +27,41 @@ datepickerSubmit.addEventListener("click", () => {
 
 //отображать даты в интерфейсе календаря
 const displayDates = () => {
-  dates.innerHTML = ""; //*очистить даты
-  //*отображать последнюю неделю предыдущего месяца
-  const lastOfPrevMonth = new Date(year, month, 0); //получить последнюю дату предыдущего месяца
+  dates.innerHTML = ""; // Очистка контейнера для дат
+  
+  // Отображение последней недели предыдущего месяца
+  const lastOfPrevMonth = new Date(year, month, 0); // Получить последнюю дату предыдущего месяца
+  const startDay = lastOfPrevMonth.getDate() - lastOfPrevMonth.getDay(); // Определяем день для начала отображения
 
-  for (let i = 0; i <= lastOfPrevMonth.getDate(); i++) {
-    const text = lastOfPrevMonth.getDate() - lastOfPrevMonth.getDate() + i;
-    const button = createButton(text, true, false);
+  for (let i = startDay; i <= lastOfPrevMonth.getDate(); i++) {
+    const button = createButton(i, true, false); // Создаем кнопку для каждого дня
     dates.appendChild(button);
   }
-  //*показать текущий месяц
 
-  const lastOfMonth = new Date(year, month + 1, 0); //получить последнее число месяца
+  // Показать текущий месяц
+  const lastOfMonth = new Date(year, month + 1, 0); // Получить последнее число месяца
 
   for (let i = 1; i <= lastOfMonth.getDate(); i++) {
-    const button = createButton(i, false, false);
+    const button = createButton(i, false, false); // Создаем кнопку для каждого дня текущего месяца
     dates.appendChild(button);
   }
 
-  //отобразить первую неделю следующего месяца
+  // Отобразить первую неделю следующего месяца
   const firstOfNextMonth = new Date(year, month + 1, 1);
+  const daysInNextMonthToShow = 7 - firstOfNextMonth.getDay(); // Сколько дней показывать из следующего месяца
 
-  for (let i = firstOfNextMonth.getDay(); i < 7; i++) {
-    const button = createButton(i, true, false);
+  for (let i = 1; i <= daysInNextMonthToShow; i++) {
+    const button = createButton(i, true, false); // Создаем кнопку для дней следующего месяца
     dates.appendChild(button);
   }
 };
 
 const createButton = (text, isDisabled = false, isToday = false) => {
   const button = document.createElement("button");
-  button.textContent = text;
-  button.disabled = isDisabled;
-  button.classList.toggle("today", isToday);
-  return button;
+  button.textContent = text; // Устанавливаем текст кнопки
+  button.disabled = isDisabled; // Задаем состояние кнопки (активна или нет)
+  button.classList.toggle("today", isToday); // Добавляем класс "сегодня", если нужно
+  return button; // Возвращаем кнопку
 };
 
-displayDates();
+displayDates(); // Вызов функции для отображения дат
