@@ -18,12 +18,10 @@ datepickerTo.addEventListener("click", () => {
 });
 
 datepickerDelete.addEventListener("click", () => {
-  //когда нажимаем на инпут тру меняется на фолсе и блок появляется
   datepickerBox.hidden = true;
 });
 
 datepickerSubmit.addEventListener("click", () => {
-  //когда нажимаем на инпут тру меняется на фолсе и блок появляется
   datepickerBox.hidden = true;
 });
 
