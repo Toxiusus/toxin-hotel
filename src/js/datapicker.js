@@ -31,10 +31,11 @@ const displayDates = () => {
   //*отображать последнюю неделю предыдущего месяца
   const lastOfPrevMonth = new Date(year, month, 0); //получить последнюю дату предыдущего месяца
 
-  // for (let i = 0; i < lastOfPrevMonth.getDate(); i++) {
-  //   const button = createButton(i, true, false);
-  //   dates.appendChild(button);
-  // }
+  for (let i = 0; i <= lastOfPrevMonth.getDate(); i++) {
+    const text = lastOfPrevMonth.getDate() - lastOfPrevMonth.getDate() + i;
+    const button = createButton(text, true, false);
+    dates.appendChild(button);
+  }
   //*показать текущий месяц
 
   const lastOfMonth = new Date(year, month + 1, 0); //получить последнее число месяца
@@ -45,6 +46,12 @@ const displayDates = () => {
   }
 
   //отобразить первую неделю следующего месяца
+  const firstOfNextMonth = new Date(year, month + 1, 1);
+
+  for (let i = firstOfNextMonth.getDay(); i < 7; i++) {
+    const button = createButton(i, true, false);
+    dates.appendChild(button);
+  }
 };
 
 const createButton = (text, isDisabled = false, isToday = false) => {
