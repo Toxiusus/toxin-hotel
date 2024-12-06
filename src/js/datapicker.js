@@ -25,43 +25,64 @@ datepickerSubmit.addEventListener("click", () => {
   datepickerBox.hidden = true;
 });
 
-//отображать даты в интерфейсе календаря
-const displayDates = () => {
-  dates.innerHTML = ""; // Очистка контейнера для дат
+// Обработчик клика по дате
+const handleDateClick = (e) => {
+  const button = e.target; // Получаем элемент кнопки, на которую кликнули
+
+  // Убираем класс выделения с предыдущей выбранной даты (если она есть)
+  const selected = dates.querySelector("datepicker__dates-selected");
+  selected && selected.classList.remove("datepicker__dates-selected");
   
-  // Отображение последней недели предыдущего месяца
-  const lastOfPrevMonth = new Date(year, month, 0); // Получить последнюю дату предыдущего месяца
-  const startDay = lastOfPrevMonth.getDate() - lastOfPrevMonth.getDay(); // Определяем день для начала отображения
+  // Добавляем класс выделения к текущей выбранной дате
+  button.classList.add("selected");
 
+  // Обновляем выбранную дату
+  selectedDate = new Date(year, month, parseInt(button.textContent));
+};
+
+// Функция для отображения дат в календаре
+const displayDates = () => {
+  dates.innerHTML = ""; // Очищаем контейнер для дат
+
+  // Получаем последнюю дату предыдущего месяца
+  const lastOfPrevMonth = new Date(year, month, 0);
+  // Рассчитываем дату, с которой начнем отображать дни (три последних дня)
+  const startDay = lastOfPrevMonth.getDate() - 2; 
+
+  // Отображаем три последних дня предыдущего месяца
   for (let i = startDay; i <= lastOfPrevMonth.getDate(); i++) {
-    const button = createButton(i, true, false); // Создаем кнопку для каждого дня
-    dates.appendChild(button);
+    const button = createButton(i, true, false); // Создаем кнопку для каждой даты
+    dates.appendChild(button); // Добавляем кнопку в контейнер
   }
 
-  // Показать текущий месяц
-  const lastOfMonth = new Date(year, month + 1, 0); // Получить последнее число месяца
+  // Получаем последнюю дату текущего месяца
+  const lastOfMonth = new Date(year, month + 1, 0); 
 
+  // Отображаем все даты текущего месяца
   for (let i = 1; i <= lastOfMonth.getDate(); i++) {
-    const button = createButton(i, false, false); // Создаем кнопку для каждого дня текущего месяца
-    dates.appendChild(button);
+    const button = createButton(i, false, false); // Создаем кнопку для каждой даты
+    dates.appendChild(button); // Добавляем кнопку в контейнер
   }
-
-  // Отобразить первую неделю следующего месяца
+  
+  // Получаем первую дату следующего месяца и рассчитываем, сколько дней отображать
   const firstOfNextMonth = new Date(year, month + 1, 1);
-  const daysInNextMonthToShow = 7 - firstOfNextMonth.getDay(); // Сколько дней показывать из следующего месяца
+  const daysInNextMonthToShow = 4 - firstOfNextMonth.getDay(); // Остаток дней до конца недели
 
+  // Отображаем недостающие дни следующего месяца
   for (let i = 1; i <= daysInNextMonthToShow; i++) {
-    const button = createButton(i, true, false); // Создаем кнопку для дней следующего месяца
-    dates.appendChild(button);
+    const button = createButton(i, true, false); // Создаем кнопку для каждой даты
+    dates.appendChild(button); // Добавляем кнопку в контейнер
   }
 };
 
+// Функция для создания кнопки даты
 const createButton = (text, isDisabled = false, isToday = false) => {
-  const button = document.createElement("button");
+  const button = document.createElement("button"); // Создаем новую кнопку
   button.textContent = text; // Устанавливаем текст кнопки
-  button.disabled = isDisabled; // Задаем состояние кнопки (активна или нет)
-  button.classList.toggle("today", isToday); // Добавляем класс "сегодня", если нужно
-  return button; // Возвращаем кнопку
+  button.disabled = isDisabled; // Устанавливаем, является ли кнопка неактивной
+  button.classList.toggle("today", isToday); // Устанавливаем класс "today", если кнопка относится к текущему дню
+  return button; // Возвращаем созданную кнопку
 };
 
-displayDates(); // Вызов функции для отображения дат
+// Вызываем функцию отображения дат
+displayDates();

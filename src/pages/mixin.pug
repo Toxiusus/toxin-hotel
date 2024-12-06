@@ -7,7 +7,20 @@ mixin datepicker
                 div(class="datepicker__header")
                     button(class="btn-reset") next
                     div
-                        h3 Декабрь 2024
+                        select(class="datepicker__month")
+                            option Январь
+                            option Февраль
+                            option Март
+                            option Апрель
+                            option Май
+                            option Июнь
+                            option Июль
+                            option Август
+                            option Сентябрь
+                            option Октябрь
+                            option Ноябрь
+                            option Декабрь
+                        input(class="datepicker__year" type="number" value="2024")
                     button(class="btn-reset") prev
                 div(class="datepicker__days")
                     span Пн
