@@ -27,8 +27,31 @@ datepickerSubmit.addEventListener("click", () => {
 
 //отображать даты в интерфейсе календаря
 const displayDates = () => {
-  //очистить даты
-  datepickerDates.innerHTML = "";
+  datepickerDates.innerHTML = ""; //*очистить даты
+  //*отображать последнюю неделю предыдущего месяца
+  const lastOfPrevMonth = new Date(year, month, 0); //получить последнюю дату предыдущего месяца
+
+  for (let i = 0; i < lastOfPrevMonth.getDate(); i++) {
+    const 
+  }
+  //*показать текущий месяц
+
+  const lastOfMonth = new Date(year, month + 1, 0); //получить последнее число месяца
+
+  for (let i = 0; i < lastOfMonth.getDate(); i++) {
+    const button = createButton(i, false, false);
+    dates.appendChild(button);
+  }
+
+  //отобразить первую неделю следующего месяца
+};
+
+const createButton = (text, isDisabled = false, isToday = false) => {
+  const button = document.createElement("button");
+  button.textContent = text;
+  button.disabled = isDisabled;
+  button.classList.toggle("today", isToday);
+  return button;
 };
 
 displayDates();
