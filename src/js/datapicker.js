@@ -3,7 +3,7 @@ const datepickerInput = document.querySelector(".datepicker__input");
 const datepickerTo = document.querySelector(".datepicker__input-to");
 const datepickerDelete = document.querySelector(".datepicker__delete");
 const datepickerSubmit = document.querySelector(".datepicker__submit");
-const datepickerDates = document.querySelector(".datepicker__dates");
+const dates = document.querySelector(".datepicker__dates");
 
 let selectedDate = new Date();
 let year = selectedDate.getFullYear();
@@ -27,18 +27,19 @@ datepickerSubmit.addEventListener("click", () => {
 
 //отображать даты в интерфейсе календаря
 const displayDates = () => {
-  datepickerDates.innerHTML = ""; //*очистить даты
+  dates.innerHTML = ""; //*очистить даты
   //*отображать последнюю неделю предыдущего месяца
   const lastOfPrevMonth = new Date(year, month, 0); //получить последнюю дату предыдущего месяца
 
-  for (let i = 0; i < lastOfPrevMonth.getDate(); i++) {
-    const 
-  }
+  // for (let i = 0; i < lastOfPrevMonth.getDate(); i++) {
+  //   const button = createButton(i, true, false);
+  //   dates.appendChild(button);
+  // }
   //*показать текущий месяц
 
   const lastOfMonth = new Date(year, month + 1, 0); //получить последнее число месяца
 
-  for (let i = 0; i < lastOfMonth.getDate(); i++) {
+  for (let i = 1; i <= lastOfMonth.getDate(); i++) {
     const button = createButton(i, false, false);
     dates.appendChild(button);
   }
