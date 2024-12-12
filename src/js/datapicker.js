@@ -22,31 +22,44 @@ let month = selectedDate.getMonth();
 // Определяем функцию formatDate, которая форматирует объект даты в строку формата "DD.MM.YYYY"
 const formatDate = (date) => {
   // Получаем день месяца и добавляем ведущий ноль, если это необходимо (например, 01, 02 и т.д.)
-  const day = String(date.getDate()).padStart(2, '0');
-  
+  const day = String(date.getDate()).padStart(2, "0");
+
   // Получаем месяц (нужно добавить 1, так как months начинаются с 0) и добавляем ведущий ноль
-  const month = String(date.getMonth() + 1).padStart(2, '0'); 
-  
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+
   // Получаем год
   const year = date.getFullYear();
-  
+
   // Возвращаем форматированную строку в формате "DD.MM.YYYY"
   return `${day}.${month}.${year}`;
 };
 
-// Преобразуем HTMLCollection dateButtons (коллекция элементов кнопок) в массив 
+// Преобразуем HTMLCollection dateButtons (коллекция элементов кнопок) в массив
 Array.from(dateButtons).forEach((element) => {
   // Для каждой кнопки добавляем обработчик события "click"
   element.addEventListener("click", (e) => {
     // Получаем элемент, на который кликнули
     const button = e.target;
-    
+
     // Создаем новый объект Date на основе текущего года и месяца, передавая день из текстового содержимого кнопки,
     // и преобразуем его в целое число с помощью parseInt
     selectedDate = new Date(year, month, parseInt(button.textContent));
-    
-    // Устанавливаем значение в input (datepickerInput) в отформатированном виде
-    datepickerInput.value = formatDate(selectedDate);
+
+    // Проверяем, какой из инпутов в данный момент свободен
+    if (!datepickerInput.disabled) { //если говорить тупым языком,то тут сказано является ли input заблокированым
+      // Устанавливаем значение в первый input и блокируем его
+      datepickerInput.value = formatDate(selectedDate); // Устанавливаем значение в input (datepickerInput) в отформатированном виде
+      datepickerInput.disabled = true; // Блокируем первый инпут
+
+      // Устанавливаем фокус на второй input
+      datepickerTo.focus();
+    } else {
+      // Устанавливаем значение во второй input
+      datepickerTo.value = formatDate(selectedDate);
+
+      // При желании можно также разблокировать первый инпут
+      datepickerInput.disabled = false; // Разблокируем первый инпут для повторного использования
+    }
   });
 });
 
