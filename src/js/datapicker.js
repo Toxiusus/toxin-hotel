@@ -8,9 +8,47 @@ const nextBtn = datepickerBox.querySelector(".datepicker__next");
 const prevBtn = datepickerBox.querySelector(".datepicker__prev");
 const monthInput = datepickerBox.querySelector(".datepicker__month");
 const yearInput = datepickerBox.querySelector(".datepicker__year");
+const dateButtons = document.querySelectorAll("div.datepicker__dates");
+
+// Создаем новый объект Date, представляющий текущую дату и время
 let selectedDate = new Date();
+
+// Получаем текущий год из объекта selectedDate
 let year = selectedDate.getFullYear();
+
+// Получаем текущий месяц из объекта selectedDate (0 - январь, 11 - декабрь)
 let month = selectedDate.getMonth();
+
+// Определяем функцию formatDate, которая форматирует объект даты в строку формата "DD.MM.YYYY"
+const formatDate = (date) => {
+  // Получаем день месяца и добавляем ведущий ноль, если это необходимо (например, 01, 02 и т.д.)
+  const day = String(date.getDate()).padStart(2, '0');
+  
+  // Получаем месяц (нужно добавить 1, так как months начинаются с 0) и добавляем ведущий ноль
+  const month = String(date.getMonth() + 1).padStart(2, '0'); 
+  
+  // Получаем год
+  const year = date.getFullYear();
+  
+  // Возвращаем форматированную строку в формате "DD.MM.YYYY"
+  return `${day}.${month}.${year}`;
+};
+
+// Преобразуем HTMLCollection dateButtons (коллекция элементов кнопок) в массив 
+Array.from(dateButtons).forEach((element) => {
+  // Для каждой кнопки добавляем обработчик события "click"
+  element.addEventListener("click", (e) => {
+    // Получаем элемент, на который кликнули
+    const button = e.target;
+    
+    // Создаем новый объект Date на основе текущего года и месяца, передавая день из текстового содержимого кнопки,
+    // и преобразуем его в целое число с помощью parseInt
+    selectedDate = new Date(year, month, parseInt(button.textContent));
+    
+    // Устанавливаем значение в input (datepickerInput) в отформатированном виде
+    datepickerInput.value = formatDate(selectedDate);
+  });
+});
 
 datepickerInput.addEventListener("click", () => {
   datepickerBox.hidden = false;
@@ -18,6 +56,7 @@ datepickerInput.addEventListener("click", () => {
 
 datepickerDelete.addEventListener("click", () => {
   datepickerBox.hidden = true;
+  datepickerInput.value = "";
 });
 
 datepickerTo.addEventListener("click", () => {
@@ -26,11 +65,11 @@ datepickerTo.addEventListener("click", () => {
 
 datepickerSubmit.addEventListener("click", () => {
   datepickerBox.hidden = true;
-  datepickerInput.value = selectedDate.toLocaleDateString("en-GB", {
-    year: "numeric",
-    day: "2-digit",
-    month: "2-digit",
-  });
+  // datepickerInput.value = selectedDate.toLocaleDateString("en-GB", {
+  //   year: "numeric",
+  //   day: "2-digit",
+  //   month: "2-digit",
+  // });
 });
 
 nextBtn.addEventListener("click", () => {
@@ -62,7 +101,7 @@ const handleDateClick = (e) => {
   button.classList.add("selected");
 
   // Обновляем выбранную дату
-  selectedDate = new Date(year, month, parseInt(button.textContent));
+  let selectedDate = new Date(year, month, parseInt(button.textContent));
 };
 
 // Функция для отображения дат в календаре
