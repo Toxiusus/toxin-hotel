@@ -99,7 +99,9 @@
   color: rgba(31, 32, 65, 0.25);
   font-family: Montserrat;
 }
-
+.datepicker__dates button{
+  color: rgba(31, 32, 65, 0.5);
+}
 .datepicker__header {
   display: flex;
   align-items: center;
