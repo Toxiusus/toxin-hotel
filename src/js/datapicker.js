@@ -46,7 +46,8 @@ Array.from(dateButtons).forEach((element) => {
     selectedDate = new Date(year, month, parseInt(button.textContent));
 
     // Проверяем, какой из инпутов в данный момент свободен
-    if (!datepickerInput.disabled) { //если говорить тупым языком,то тут сказано является ли input заблокированым
+    if (!datepickerInput.disabled) {
+      //если говорить тупым языком,то тут сказано является ли input заблокированым
       // Устанавливаем значение в первый input и блокируем его
       datepickerInput.value = formatDate(selectedDate); // Устанавливаем значение в input (datepickerInput) в отформатированном виде
       datepickerInput.disabled = true; // Блокируем первый инпут
@@ -78,11 +79,6 @@ datepickerTo.addEventListener("click", () => {
 
 datepickerSubmit.addEventListener("click", () => {
   datepickerBox.hidden = true;
-  // datepickerInput.value = selectedDate.toLocaleDateString("en-GB", {
-  //   year: "numeric",
-  //   day: "2-digit",
-  //   month: "2-digit",
-  // });
 });
 
 nextBtn.addEventListener("click", () => {
