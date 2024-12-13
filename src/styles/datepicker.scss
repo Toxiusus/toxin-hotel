@@ -1,3 +1,33 @@
+.datepicker {
+  min-width: 380px;
+}
+
+.datepicker__card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  max-width: 380px;
+  min-width: 380px;
+  padding: 39px 30px 30px 29px;
+}
+
+.datepicker__inputs-title {
+  padding-bottom: 5px;
+}
+
+.datepicker__inputs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 21px;
+}
+
+.datepicker__departure-title {
+  text-transform: uppercase;
+}
+
 .datepicker__input {
   width: 150px;
   height: 44px;
@@ -8,20 +38,14 @@
   background: rgb(255, 255, 255);
 }
 
-.datepicker__container {
-  position: relative;
-}
-
 .datepicker__box {
-  position: absolute;
   top: 100%;
   z-index: 100;
   margin-top: 2px;
   background: #fff;
   padding: 20px;
   border-radius: 5px;
-  width: 320px;
-  height: 369px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
 }
 
 .datepicker__days,
@@ -43,8 +67,8 @@
   font-family: Montserrat;
 }
 
-.datepicker__header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.datepicker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

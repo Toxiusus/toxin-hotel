@@ -16,6 +16,12 @@
   padding: 70px 0 0 140px;
 }
 
-.landing__text{
-  font-size: 90px;
+.landing__text {
+  align-self: flex-end;
+  color: rgba(31, 32, 65, 0.75);
+  font: 400 1rem / 24px montserrat, arial, sans-serif;
+  margin: 0;
+  max-width: 400px;
+  padding: 316px 133px 21px 0;
+  text-align: end;
 }
