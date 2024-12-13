@@ -28,6 +28,32 @@
   text-transform: uppercase;
 }
 
+.datepicker__yearsandmonths {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.datepicker__month {
+  color: rgb(31, 32, 65);
+  font-family: Montserrat;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.datepicker__year {
+  color: rgb(31, 32, 65);
+  font-family: Montserrat;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+  max-width: 100px;
+}
+
 .datepicker__input {
   width: 150px;
   height: 44px;

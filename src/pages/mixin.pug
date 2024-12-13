@@ -12,8 +12,9 @@ mixin datepicker
                         input(class="datepicker__input datepicker__input-to" type="text" placeholder="ДД.ММ.ГГГГ")
                 div(class="datepicker__box")
                     div(class="datepicker__header")
-                        button(class="btn-reset datepicker__prev") prev
-                        div
+                        button(class="btn-reset datepicker__prev")
+                            img(src="../images/arrow-left.svg", alt="arrow-left")
+                        div(class="datepicker__yearsandmonths")
                             select(class="datepicker__month")
                                 option Январь
                                 option Февраль
@@ -28,7 +29,8 @@ mixin datepicker
                                 option Ноябрь
                                 option Декабрь
                                 input(class="datepicker__year" type="number" value="2024")
-                        button(class="btn-reset datepicker__next") next
+                        button(class="btn-reset datepicker__next")
+                            img(src="../images/arrow-right.svg", alt="arrow-right")
                     div(class="datepicker__days")
                         span Пн
                         span Вт
