@@ -6,7 +6,6 @@
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   max-width: 380px;
   min-width: 380px;
@@ -73,16 +72,17 @@
 .datepicker__box {
   top: 100%;
   z-index: 100;
-  margin-top: 2px;
+  margin-top: 5px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
+  border: 1px solid rgba(31, 32, 65, 0.25);
 }
 
 .datepicker__days,
 .datepicker__dates {
   display: grid;
-  grid-template-columns: repeat(7, 32px);
+  grid-template-columns: repeat(7, 1fr);
   gap: 10px;
 }
 
@@ -105,4 +105,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 20px 25px;
+}
+
+.datepicker__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 20px;
+}
+
+.datepicker__btn {
+  color: rgb(188, 156, 255);
 }
