@@ -102,7 +102,7 @@ const updateYearMonth = () => {
 const handleDateClick = (e) => {
   const button = e.target; // Получаем элемент кнопки, на которую кликнули
   console.log(button);
-  
+
   // Убираем класс выделения с предыдущей выбранной даты (если она есть)
   const selected = dates.querySelector("datepicker__dates-selected");
   selected && selected.classList.remove("datepicker__dates-selected");
