@@ -161,3 +161,9 @@ const createButton = (text, isDisabled = false, isToday = false) => {
 
 // Вызываем функцию отображения дат
 displayDates();
+
+const styleButtons = document.querySelectorAll("div.datepicker__dates button");
+
+Array.from(styleButtons).forEach((element) => {
+  element.classList.add("btn-reset");
+});
