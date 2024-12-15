@@ -99,7 +99,7 @@
   color: rgba(31, 32, 65, 0.25);
   font-family: Montserrat;
 }
-.datepicker__dates button{
+.datepicker__dates button {
   color: rgba(31, 32, 65, 0.5);
 }
 .datepicker__header {
@@ -120,6 +120,9 @@
   color: rgb(188, 156, 255);
 }
 
-.datepicker__dates-selected{
-  font-size: 70px;
+.datepicker__dates-selected {
+  width: 100%;
+  background: linear-gradient(180deg, #bc9cff, #8ba4f9);
+  color: #fff !important;
+  border-radius: 50%;
 }

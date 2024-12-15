@@ -51,12 +51,14 @@ Array.from(dateButtons).forEach((element) => {
       // Устанавливаем значение в первый input и блокируем его
       datepickerInput.value = formatDate(selectedDate); // Устанавливаем значение в input (datepickerInput) в отформатированном виде
       datepickerInput.disabled = true; // Блокируем первый инпут
+      button.classList.add("datepicker__dates-selected");
 
       // Устанавливаем фокус на второй input
       datepickerTo.focus();
     } else {
       // Устанавливаем значение во второй input
       datepickerTo.value = formatDate(selectedDate);
+      button.classList.add("datepicker__dates-selected");
 
       // При желании можно также разблокировать первый инпут
       datepickerInput.disabled = false; // Разблокируем первый инпут для повторного использования
