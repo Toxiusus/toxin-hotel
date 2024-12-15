@@ -10,6 +10,7 @@ mixin datepicker
                     div(class="datepicker__departure")
                         h3(class="datepicker__inputs-title") выезд
                         input(class="datepicker__input datepicker__input-to" type="text" placeholder="ДД.ММ.ГГГГ")
+                +dropdown
                 div(class="datepicker__box")
                     div(class="datepicker__header")
                         button(class="btn-reset datepicker__prev datepicker__btn")
@@ -43,3 +44,13 @@ mixin datepicker
                     div(class="datepicker__footer")
                         button(class="datepicker__delete btn-reset datepicker__btn") очистить
                         button(class="datepicker__submit btn-reset datepicker__btn") применить
+mixin dropdown
+    div(class="dropdown")
+        div(class="dropdown__select")
+            input(class="dropdown__selected" placeholder="penis") 
+        ul(class="dropdown__list list-reset")
+            li framer
+            li framer
+            li framer
+            li(class="dropdown__item-active") framer
+            li framer
