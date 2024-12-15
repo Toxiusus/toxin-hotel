@@ -19,6 +19,10 @@ let year = selectedDate.getFullYear();
 // Получаем текущий месяц из объекта selectedDate (0 - январь, 11 - декабрь)
 let month = selectedDate.getMonth();
 
+let activeButton = null; // Переменная для отслеживания активной кнопки
+
+let secondActiveButton = null;
+
 // Определяем функцию formatDate, которая форматирует объект даты в строку формата "DD.MM.YYYY"
 const formatDate = (date) => {
   // Получаем день месяца и добавляем ведущий ноль, если это необходимо (например, 01, 02 и т.д.)
@@ -47,22 +51,33 @@ Array.from(dateButtons).forEach((element) => {
 
     // Проверяем, какой из инпутов в данный момент свободен
     if (!datepickerInput.disabled) {
-      //если говорить тупым языком,то тут сказано является ли input заблокированым
       // Устанавливаем значение в первый input и блокируем его
       datepickerInput.value = formatDate(selectedDate); // Устанавливаем значение в input (datepickerInput) в отформатированном виде
+
       datepickerInput.disabled = true; // Блокируем первый инпут
-      button.classList.add("datepicker__dates-selected");
+
+      button.classList.add("selected");
 
       // Устанавливаем фокус на второй input
       datepickerTo.focus();
     } else {
       // Устанавливаем значение во второй input
       datepickerTo.value = formatDate(selectedDate);
-      button.classList.add("datepicker__dates-selected");
+
+      button.classList.add("selected");
 
       // При желании можно также разблокировать первый инпут
       datepickerInput.disabled = false; // Разблокируем первый инпут для повторного использования
     }
+    // Проверяем, была ли нажата другая кнопка ранее (activeButton уже установлена)
+    if (activeButton && activeButton !== button) {
+      //   // Если существует активная кнопка и она не равна текущей кнопке, это значит, что пользователь нажал на другую кнопку.
+      activeButton.classList.remove("selected"); // Удаляем стиль с предыдущей кнопки (которая была активной).
+    }
+
+    // Обновляем значение activeButton для текущей кнопки,
+    // чтобы она стала новой активной кнопкой.
+    activeButton = button;
   });
 });
 
