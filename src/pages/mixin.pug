@@ -14,7 +14,7 @@ mixin datepicker
                 div(class="datepicker__box")
                     div(class="datepicker__header")
                         button(class="btn-reset datepicker__prev datepicker__btn")
-                            img(src="../images/arrow-left.svg", alt="arrow-left")
+                            img(src="../images/arrow-left.svg" alt="arrow-left")
                         div(class="datepicker__yearsandmonths")
                             select(class="datepicker__month")
                                 option Январь
@@ -31,7 +31,7 @@ mixin datepicker
                                 option Декабрь
                                 input(class="datepicker__year" type="number" value="2024")
                         button(class="btn-reset datepicker__next datepicker__btn")
-                            img(src="../images/arrow-right.svg", alt="arrow-right")
+                            img(src="../images/arrow-right.svg" alt="arrow-right")
                     div(class="datepicker__days")
                         span Пн
                         span Вт
@@ -47,9 +47,25 @@ mixin datepicker
 mixin dropdown
     div(class="dropdown")
         div(class="dropdown__select")
-            span(class="dropdown__selected") figma 
+            span(class="dropdown__selected") Сколько гостей
             div(class="dropdown__caret")
-        ul(class="menu list-reset")
-            li взрослые
-            li дети
-            li младенцы
+                img(src="../images/arrow-down.svg" alt="arrow-down")
+        ul(class="dropdown__menu list-reset")
+            li(class="dropdown__item")
+                p(class="dropdown__item-text") взрослые
+                div(class="dropdown__item-controls")
+                    button(class="dropdown__item-plus" id="plus") plus
+                    input(class="dropdown__item-input" type="number" placeholder="0" id="adultCounter")
+                    button(class="dropdown__item-minus" id="minus") minus
+            li(class="dropdown__item")
+                p(class="dropdown__item-text") дети
+                div(class="dropdown__item-controls")
+                    button(class="dropdown__item-plus" id="plus") plus
+                    input(class="dropdown__item-input" type="number" placeholder="0" id="childrenCounter")
+                    button(class="dropdown__item-minus" id="minus") minus
+            li(class="dropdown__item")
+                p(class="dropdown__item-text") младенцы
+                div(class="dropdown__item-controls")
+                    button(class="dropdown__item-plus" id="plus") plus
+                    input(class="dropdown__item-input" type="number" placeholder="0" id="babiesCounter")
+                    button(class="dropdown__item-minus" id="minus") minus

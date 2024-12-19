@@ -19,10 +19,6 @@ let year = selectedDate.getFullYear();
 // Получаем текущий месяц из объекта selectedDate (0 - январь, 11 - декабрь)
 let month = selectedDate.getMonth();
 
-let activeButton = null; // Переменная для отслеживания активной кнопки
-
-let secondActiveButton = null;
-
 // Определяем функцию formatDate, которая форматирует объект даты в строку формата "DD.MM.YYYY"
 const formatDate = (date) => {
   // Получаем день месяца и добавляем ведущий ноль, если это необходимо (например, 01, 02 и т.д.)
@@ -44,6 +40,11 @@ Array.from(dateButtons).forEach((element) => {
   element.addEventListener("click", (e) => {
     // Получаем элемент, на который кликнули
     const button = e.target;
+
+    const styles = Array.from(element.classList);
+
+    const commonStyles = styles.filter((cls) => cls === "selected");
+    console.log(commonStyles);
 
     // Создаем новый объект Date на основе текущего года и месяца, передавая день из текстового содержимого кнопки,
     // и преобразуем его в целое число с помощью parseInt
@@ -69,15 +70,11 @@ Array.from(dateButtons).forEach((element) => {
       // При желании можно также разблокировать первый инпут
       datepickerInput.disabled = false; // Разблокируем первый инпут для повторного использования
     }
-    // Проверяем, была ли нажата другая кнопка ранее (activeButton уже установлена)
-    if (activeButton && activeButton !== button) {
-      //   // Если существует активная кнопка и она не равна текущей кнопке, это значит, что пользователь нажал на другую кнопку.
-      activeButton.classList.remove("selected"); // Удаляем стиль с предыдущей кнопки (которая была активной).
+    if (commonStyles.length > 2) {
+      commonStyles.forEach(() => {
+        button.classList.remove("selected");
+      });
     }
-
-    // Обновляем значение activeButton для текущей кнопки,
-    // чтобы она стала новой активной кнопкой.
-    activeButton = button;
   });
 });
 
