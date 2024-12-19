@@ -44,7 +44,6 @@ Array.from(dateButtons).forEach((element) => {
     const styles = Array.from(element.classList);
 
     const commonStyles = styles.filter((cls) => cls === "selected");
-    console.log(commonStyles);
 
     // Создаем новый объект Date на основе текущего года и месяца, передавая день из текстового содержимого кнопки,
     // и преобразуем его в целое число с помощью parseInt
