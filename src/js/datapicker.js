@@ -34,49 +34,6 @@ const formatDate = (date) => {
   return `${day}.${month}.${year}`;
 };
 
-// Преобразуем HTMLCollection dateButtons (коллекция элементов кнопок) в массив
-Array.from(dateButtons).forEach((element) => {
-  // Для каждой кнопки добавляем обработчик события "click"
-  element.addEventListener("click", (e) => {
-    // Получаем элемент, на который кликнули
-    const button = e.target;
-
-    const styles = Array.from(element.classList);
-
-    const commonStyles = styles.filter((cls) => cls === "selected");
-
-    // Создаем новый объект Date на основе текущего года и месяца, передавая день из текстового содержимого кнопки,
-    // и преобразуем его в целое число с помощью parseInt
-    selectedDate = new Date(year, month, parseInt(button.textContent));
-
-    // Проверяем, какой из инпутов в данный момент свободен
-    if (!datepickerInput.disabled) {
-      // Устанавливаем значение в первый input и блокируем его
-      datepickerInput.value = formatDate(selectedDate); // Устанавливаем значение в input (datepickerInput) в отформатированном виде
-
-      datepickerInput.disabled = true; // Блокируем первый инпут
-
-      button.classList.add("selected");
-
-      // Устанавливаем фокус на второй input
-      datepickerTo.focus();
-    } else {
-      // Устанавливаем значение во второй input
-      datepickerTo.value = formatDate(selectedDate);
-
-      button.classList.add("selected");
-
-      // При желании можно также разблокировать первый инпут
-      datepickerInput.disabled = false; // Разблокируем первый инпут для повторного использования
-    }
-    if (commonStyles.length > 2) {
-      commonStyles.forEach(() => {
-        button.classList.remove("selected");
-      });
-    }
-  });
-});
-
 datepickerInput.addEventListener("click", () => {
   datepickerBox.hidden = false;
 });
@@ -109,22 +66,6 @@ prevBtn.addEventListener("click", () => {
 const updateYearMonth = () => {
   monthInput.selectedIndex = month;
   yearInput.value = year;
-};
-
-// Обработчик клика по дате
-const handleDateClick = (e) => {
-  const button = e.target; // Получаем элемент кнопки, на которую кликнули
-  console.log(button);
-
-  // Убираем класс выделения с предыдущей выбранной даты (если она есть)
-  const selected = dates.querySelector("datepicker__dates-selected");
-  selected && selected.classList.remove("datepicker__dates-selected");
-
-  // Добавляем класс выделения к текущей выбранной дате
-  button.classList.add("selected");
-
-  // Обновляем выбранную дату
-  let selectedDate = new Date(year, month, parseInt(button.textContent));
 };
 
 // Функция для отображения дат в календаре
@@ -170,14 +111,62 @@ const createButton = (text, isDisabled = false, isToday = false) => {
   button.textContent = text; // Устанавливаем текст кнопки
   button.disabled = isDisabled; // Устанавливаем, является ли кнопка неактивной
   button.classList.toggle("today", isToday); // Устанавливаем класс "today", если кнопка относится к текущему дню
+  button.classList.add("btn-reset");
   return button; // Возвращаем созданную кнопку
 };
 
 // Вызываем функцию отображения дат
 displayDates();
 
-const styleButtons = document.querySelectorAll("div.datepicker__dates button");
+// Ждем, пока документ полностью загрузится
+document.addEventListener("DOMContentLoaded", function () {
+  // Находим элемент div с классом 'datepicker__dates'
+  var datePickerDiv = document.querySelector(".datepicker__dates");
+  var buttons = datePickerDiv.querySelectorAll("button");
 
-Array.from(styleButtons).forEach((element) => {
-  element.classList.add("btn-reset");
+  var buttonsArray = Array.from(buttons);
+  var clickedButtons = []; // Массив для хранения нажатых кнопок
+
+  buttonsArray.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      const button = e.target;
+      
+      // Проверяем, если уже нажимали на две разные кнопки
+      if (clickedButtons.includes(button)) {
+        return; // Если кнопка уже была нажата, выходим из функции
+      }
+
+      // Добавляем текущую кнопку в массив нажатых кнопок
+      clickedButtons.push(button);
+
+      // Если нажато уже две кнопки, сбрасываем стиль
+      if (clickedButtons.length > 3) {
+        clickedButtons.forEach((btn) => {
+          btn.classList.remove("selected");
+        });
+        clickedButtons = []; // Очищаем массив
+      }
+
+      // Удаляем класс 'selected' у предыдущей выбранной кнопки
+      const selectedButton = datePickerDiv.querySelector(".selected");
+      if (selectedButton && selectedButton !== button) {
+        selectedButton.classList.remove("selected");
+      }
+
+      // Устанавливаем класс "selected" у текущей кнопки
+      button.classList.add("selected");
+
+      // Логика для обработки даты
+      const selectedDate = new Date(year, month, parseInt(button.textContent));
+      if (!datepickerInput.disabled) {
+        datepickerInput.value = formatDate(selectedDate);
+        datepickerInput.disabled = true;
+      } else {
+        datepickerTo.value = formatDate(selectedDate);
+        datepickerInput.disabled = false;
+      }
+
+      datepickerTo.focus();
+    });
+  });
 });

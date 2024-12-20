@@ -1,9 +1,67 @@
-.dropdown {
-  position: relative;
+
+.datepicker {
+  min-width: 380px;
 }
 
-.dropdown__select {
-  width: 319px;
+.datepicker__card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  max-width: 380px;
+  min-width: 380px;
+  padding: 39px 30px 30px 29px;
+}
+
+.datepicker__inputs-title {
+  padding-bottom: 5px;
+}
+
+.datepicker__inputs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 21px;
+}
+
+.datepicker__departure-title {
+  text-transform: uppercase;
+}
+
+.datepicker__yearsandmonths {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.datepicker__month {
+  color: rgb(31, 32, 65);
+  font-family: Montserrat;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: right;
+  border: none;
+}
+
+.datepicker__year {
+  color: rgb(31, 32, 65);
+  font-family: Montserrat;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+  max-width: 70px;
+}
+
+.datepicker__btn {
+  display: flex;
+  align-items: center;
+}
+
+.datepicker__input {
+  width: 150px;
   height: 44px;
   padding-left: 15px;
   padding-right: 54px;
@@ -12,49 +70,60 @@
   background: rgb(255, 255, 255);
 }
 
-.dropdown__caret {
-  width: 0;
-  height: 0;
-}
-
-.dropdown__caret-rotate {
-  transform: rotate(180deg);
-}
-
-.dropdown__menu {
+.datepicker__box {
+  top: 100%;
+  z-index: 100;
+  margin-top: 5px;
   background: #fff;
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  border-top: none;
-  display: block;
-  z-index: 3;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
+  border: 1px solid rgba(31, 32, 65, 0.25);
 }
 
-.dropdown__menu-open li {
-  padding: 0.7em 0.5em;
-  margin: 0.3em 0;
-  border-radius: 0.5em;
-  cursor: pointer;
+.datepicker__days,
+.datepicker__dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
 }
 
-.dropdown__menu-open {
-  display: block;
-  opacity: 1;
+.datepicker__days {
+  padding: 0 20px;
+  color: rgb(188, 156, 255);
+  text-align: center;
 }
 
-.dropdown__menu {
-  padding: 13px 7px 13px 15px;
+.datepicker__dates {
+  padding: 18px 20px 20px 21px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.25);
+  font-family: Montserrat;
+}
+.datepicker__dates button {
+  color: rgba(31, 32, 65, 0.5);
+}
+.datepicker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 25px;
 }
 
-.dropdown__item {
+.datepicker__footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 20px;
 }
 
-.dropdown__item-controls {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.datepicker__btn {
+  color: rgb(188, 156, 255);
 }
 
-.dropdown__item-input{
-  width: 30px;
+.selected {
+  width: 100%;
+  background: linear-gradient(180deg, #bc9cff, #8ba4f9);
+  color: #fff !important;
+  border-radius: 50%;
 }
