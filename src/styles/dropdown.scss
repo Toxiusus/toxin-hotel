@@ -10,11 +10,20 @@
   background: rgb(255, 255, 255);
 }
 
+.dropdown__caret-rotate {
+  transform: rotate(180deg);
+}
+
 .dropdown__menu {
+  opacity: 0;
   padding: 13px 15px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   background: rgb(255, 255, 255);
+}
+
+.dropdown__menu-open {
+  opacity: 1;
 }
 
 .dropdown__item {
@@ -26,15 +35,23 @@
 
 .dropdown__item-controls {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.dropdown__item-text{
+.dropdown__item-text {
   text-transform: uppercase;
 }
 
 .dropdown__item-input {
   width: 30px;
+  text-align: center;
+}
+
+/* Убираем стрелочки для input типа number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .dropdown__btn {
@@ -50,7 +67,7 @@
   border-color: rgba(31, 32, 65, 0.5);
 }
 
-.dropdown__buttons{
+.dropdown__buttons {
   display: flex;
   justify-content: space-between;
 }

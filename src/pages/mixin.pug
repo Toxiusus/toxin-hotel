@@ -55,21 +55,21 @@ mixin dropdown
             li(class="dropdown__item")
                 p(class="dropdown__item-text") взрослые
                 div(class="dropdown__item-controls")
-                    button(class="dropdown__item-minus dropdown__btn" id="minus") -
-                    input(class="dropdown__item-input" type="number" placeholder="0" id="adultCounter")
-                    button(class="dropdown__item-plus dropdown__btn" id="plus") +
+                    button(class="dropdown__item-minus dropdown__btn" id="minus"  data-target="adult") -
+                    input(class="dropdown__item-input" type="number" value="0" id="adultCounter")
+                    button(class="dropdown__item-plus dropdown__btn" id="plus" data-target="adult") +
             li(class="dropdown__item")
                 p(class="dropdown__item-text") дети
                 div(class="dropdown__item-controls")
-                    button(class="dropdown__item-minus dropdown__btn" id="minus") -
-                    input(class="dropdown__item-input" type="number" placeholder="0" id="childrenCounter")
-                    button(class="dropdown__item-plus dropdown__btn" id="plus") +
+                    button(class="dropdown__item-minus dropdown__btn" id="minus"  data-target="children") -
+                    input(class="dropdown__item-input" type="number" value="0" id="childrenCounter")
+                    button(class="dropdown__item-plus dropdown__btn" id="plus" data-target="children") +
             li(class="dropdown__item")
                 p(class="dropdown__item-text") младенцы
                 div(class="dropdown__item-controls")
-                    button(class="dropdown__item-minus dropdown__btn" id="minus") -
-                    input(class="dropdown__item-input" type="number" placeholder="0" id="babiesCounter")
-                    button(class="dropdown__item-plus dropdown__btn" id="plus") +
+                    button(class="dropdown__item-minus dropdown__btn" id="minus"  data-target="babies") -
+                    input(class="dropdown__item-input" type="number" value="0" id="babiesCounter")
+                    button(class="dropdown__item-plus dropdown__btn" id="plus" data-target="babies") +
             div(class="dropdown__buttons")
                 button(class="dropdown__button btn-reset") удалить
                 button(class="dropdown__button btn-reset") применить

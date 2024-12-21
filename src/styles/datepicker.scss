@@ -24,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 21px;
+  margin: 21px 0;
 }
 
 .datepicker__departure-title {
@@ -75,7 +75,7 @@
 
 .datepicker__box {
   position: absolute;
-  top: 30%;
+  top: 18%;
   z-index: 100;
   margin-top: 5px;
   background: #fff;
