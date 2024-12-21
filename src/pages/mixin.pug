@@ -10,8 +10,7 @@ mixin datepicker
                     div(class="datepicker__departure")
                         h3(class="datepicker__inputs-title") выезд
                         input(class="datepicker__input datepicker__input-to" type="text" placeholder="ДД.ММ.ГГГГ")
-                +dropdown
-                div(class="datepicker__box")
+                div(class="datepicker__box" hidden)
                     div(class="datepicker__header")
                         button(class="btn-reset datepicker__prev datepicker__btn")
                             img(src="../images/arrow-left.svg" alt="arrow-left")

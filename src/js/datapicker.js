@@ -41,6 +41,7 @@ datepickerInput.addEventListener("click", () => {
 datepickerDelete.addEventListener("click", () => {
   datepickerBox.hidden = true;
   datepickerInput.value = "";
+  datepickerTo.value = "";
 });
 
 datepickerTo.addEventListener("click", () => {

@@ -2,6 +2,10 @@
   min-width: 380px;
 }
 
+.datepciker__form{
+  position: relative;
+}
+
 .datepicker__card {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -9,7 +13,7 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   max-width: 380px;
   min-width: 380px;
-  padding: 39px 30px 30px 29px;
+  padding: 39px 27px 30px 29px;
 }
 
 .datepicker__inputs-title {
@@ -70,6 +74,7 @@
 }
 
 .datepicker__box {
+  position: absolute;
   top: 100%;
   z-index: 100;
   margin-top: 5px;
@@ -77,13 +82,6 @@
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
   border: 1px solid rgba(31, 32, 65, 0.25);
-}
-
-.datepicker__days,
-.datepicker__dates {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
 }
 
 .datepicker__days {
@@ -125,4 +123,18 @@
   background: linear-gradient(180deg, #bc9cff, #8ba4f9);
   color: #fff !important;
   border-radius: 50%;
+}
+
+.datepicker__days{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}
+.datepicker__dates{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}
+
+.datepicker__dates button{
+  width: 40px;
+  height: 40px;
 }
