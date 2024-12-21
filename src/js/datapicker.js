@@ -78,7 +78,7 @@ const displayDates = () => {
   // Получаем последнюю дату предыдущего месяца
   const lastOfPrevMonth = new Date(year, month, 0);
   // Рассчитываем дату, с которой начнем отображать дни
-  const startDay = lastOfPrevMonth.getDate() - 1;
+  const startDay = lastOfPrevMonth.getDate() - 2;
 
   // Отображаем три последних дня предыдущего месяца
   for (let i = startDay; i <= lastOfPrevMonth.getDate(); i++) {
