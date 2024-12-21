@@ -11,22 +11,45 @@
 }
 
 .dropdown__menu {
-  padding: 13px 7px 13px 7px;
+  padding: 13px 15px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   background: rgb(255, 255, 255);
 }
 
-.dropdown__item{
+.dropdown__item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.dropdown__item-controls{
-  display: flex;
-  justify-content: space-between;
+.dropdown__item-controls {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
 }
 
-.dropdown__item-input{
+.dropdown__item-text{
+  text-transform: uppercase;
+}
+
+.dropdown__item-input {
   width: 30px;
+}
+
+.dropdown__btn {
+  width: 30px; /* Ширина кружка */
+  height: 30px; /* Высота кружка */
+  background-color: transparent; /* Цвет фона */
+  border-radius: 50%; /* Закругление углов, чтобы получился кружок */
+  display: flex; /* Используем flexbox для центрирования содержимого */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+  font-size: 18px; /* Размер шрифта для знака минус */
+  color: rgba(31, 32, 65, 0.5);
+  border-color: rgba(31, 32, 65, 0.5);
+}
+
+.dropdown__buttons{
+  display: flex;
+  justify-content: space-between;
 }
