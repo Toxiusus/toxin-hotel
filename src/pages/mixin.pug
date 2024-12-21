@@ -46,6 +46,7 @@ mixin datepicker
                         button(class="datepicker__submit btn-reset datepicker__btn") применить
 mixin dropdown
     div(class="dropdown")
+        h3 гости
         div(class="dropdown__select")
             span(class="dropdown__selected") Сколько гостей
             div(class="dropdown__caret")
@@ -54,7 +55,7 @@ mixin dropdown
             li(class="dropdown__item")
                 p(class="dropdown__item-text") взрослые
                 div(class="dropdown__item-controls")
-                    button(class="dropdown__item-plus" id="plus") plus
+                    button(class="dropdown__item-plus" id="plus")
                     input(class="dropdown__item-input" type="number" placeholder="0" id="adultCounter")
                     button(class="dropdown__item-minus" id="minus") minus
             li(class="dropdown__item")

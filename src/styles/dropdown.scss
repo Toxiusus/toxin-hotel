@@ -1,0 +1,32 @@
+.dropdown__select {
+  padding: 13px 15px;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+}
+
+.dropdown__menu {
+  padding: 13px 7px 13px 7px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+}
+
+.dropdown__item{
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown__item-controls{
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown__item-input{
+  width: 30px;
+}
