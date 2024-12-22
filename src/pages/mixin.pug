@@ -44,6 +44,9 @@ mixin datepicker
                     div(class="datepicker__footer")
                         button(class="datepicker__delete btn-reset datepicker__btn") очистить
                         button(class="datepicker__submit btn-reset datepicker__btn") применить
+            button(class="btn-reset datepicker__find")
+                span(class="datepicker__find-text") подобрать номер
+                span(class="datepicker__find-arrow")
 mixin dropdown
     div(class="dropdown")
         h3 гости
@@ -55,21 +58,23 @@ mixin dropdown
             li(class="dropdown__item")
                 p(class="dropdown__item-text") взрослые
                 div(class="dropdown__item-controls")
-                    button(class="dropdown__item-minus dropdown__btn" id="minus"  data-target="adult") -
+                    button(class="dropdown__item-minus dropdown__btn" id="minus" data-target="adult") -
                     input(class="dropdown__item-input" type="number" value="0" id="adultCounter")
                     button(class="dropdown__item-plus dropdown__btn" id="plus" data-target="adult") +
             li(class="dropdown__item")
                 p(class="dropdown__item-text") дети
                 div(class="dropdown__item-controls")
-                    button(class="dropdown__item-minus dropdown__btn" id="minus"  data-target="children") -
+                    button(class="dropdown__item-minus dropdown__btn" id="minus" data-target="children") -
                     input(class="dropdown__item-input" type="number" value="0" id="childrenCounter")
                     button(class="dropdown__item-plus dropdown__btn" id="plus" data-target="children") +
             li(class="dropdown__item")
                 p(class="dropdown__item-text") младенцы
                 div(class="dropdown__item-controls")
-                    button(class="dropdown__item-minus dropdown__btn" id="minus"  data-target="babies") -
+                    button(class="dropdown__item-minus dropdown__btn" id="minus" data-target="babies") -
                     input(class="dropdown__item-input" type="number" value="0" id="babiesCounter")
                     button(class="dropdown__item-plus dropdown__btn" id="plus" data-target="babies") +
             div(class="dropdown__buttons")
-                button(class="dropdown__button btn-reset") удалить
-                button(class="dropdown__button btn-reset") применить
+                button(class="dropdown__button btn-reset")
+                    span удалить
+                button(class="dropdown__button btn-reset")
+                    span применить

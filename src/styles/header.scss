@@ -37,25 +37,21 @@
 }
 
 .header__button {
+  position: relative;
   font-family: "Montserrat";
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-  cursor: pointer;
 }
 
 .header__enter {
-  border: 2px;
-  font-size: 12px;
+  border-radius: 1000px;
+  border: 2px solid rgb(188, 156, 255);
   color: rgb(188, 156, 255);
-  background-color: #fff;
-  text-transform: uppercase;
   padding: 7px 18px 8px;
-  border-radius: 22px;
-  border-color: rgb(188, 156, 255);
-  border-style: solid;
+  background-color: transparent;
 }
 
 .header__registration {

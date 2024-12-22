@@ -2,7 +2,7 @@
   min-width: 380px;
 }
 
-.datepciker__form{
+.datepciker__form {
   position: relative;
 }
 
@@ -75,7 +75,7 @@
 
 .datepicker__box {
   position: absolute;
-  top: 18%;
+  top: 65px;
   z-index: 100;
   margin-top: 5px;
   background: #fff;
@@ -125,16 +125,47 @@
   border-radius: 50%;
 }
 
-.datepicker__days{
+.datepicker__days {
   display: grid;
-  grid-template-columns: repeat(7,1fr);
+  grid-template-columns: repeat(7, 1fr);
 }
-.datepicker__dates{
+.datepicker__dates {
   display: grid;
-  grid-template-columns: repeat(7,1fr);
+  grid-template-columns: repeat(7, 1fr);
 }
 
-.datepicker__dates button{
+.datepicker__dates button {
   width: 40px;
   height: 40px;
+}
+
+.datepicker__find {
+  margin-top: 31px;
+  align-items: center;
+  background: linear-gradient(180deg, #bc9cff, #8ba4f9);
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  max-height: 44px;
+  outline: none;
+  padding: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  position: relative;
+}
+
+.datepicker__find-text {
+  color: #fff;
+  padding: 20px;
+  
+}
+.datepicker__find-arrow::after {
+  position: absolute;
+  content: "";
+  top: 13px;
+  right: 20px;
+  width: 15px;
+  height: 15px;
+  background-image: url("../images/arrow-right-white.svg");
 }
