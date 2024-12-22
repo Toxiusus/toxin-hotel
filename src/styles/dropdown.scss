@@ -16,6 +16,7 @@
 }
 
 .dropdown__menu {
+  z-index: 100;
   position: absolute;
   width: 100%;
   opacity: 0;
@@ -42,6 +43,12 @@
 }
 
 .dropdown__item-text {
+  color: rgb(31, 32, 65);
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -70,11 +77,11 @@ input[type="number"]::-webkit-outer-spin-button {
   border-color: rgba(31, 32, 65, 0.5);
 }
 
-.dropdown__buttons{
+.dropdown__buttons {
   display: flex;
   justify-content: space-between;
 }
-.dropdown__buttons span{
+.dropdown__buttons span {
   color: #bc9cff;
   text-transform: uppercase;
 }

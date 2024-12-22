@@ -156,9 +156,14 @@
 }
 
 .datepicker__find-text {
-  color: #fff;
+  color: rgb(255, 255, 255);
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
   padding: 20px;
-  
 }
 .datepicker__find-arrow::after {
   position: absolute;
