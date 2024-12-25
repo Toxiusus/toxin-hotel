@@ -7,8 +7,8 @@ module.exports = {
   plugins: [
     new PugPlugin({
       entry: {
-        // define many page templates here
-        index: "src/pages/landing.pug", // => dist/index.html
+        index: path.resolve(__dirname, "src/pages/landing.pug"),
+        room: path.resolve(__dirname, "src/pages/search-room.pug"),
       },
       js: {
         // JS output filename
