@@ -80,13 +80,15 @@ mixin dropdown
                     span применить
 mixin card
     div(class="card")
-        img(src="../images/room-page.png" alt="room")
+        img(class="card__image" src="../images/room-page.png" alt="room")
         div(class="card__info")
             div(class="card__data")
                 div(class="data__number")
                     span(class="data__number-symbol") №
-                    span(class="data__number-symbol") 888
-                    span(class="data__number-symbol") люкс
+                    span(class="data__number-value") 888
+                    span(class="data__number-text") люкс
+                div(class="price")
+                    span(class="price__")
             div(class="card__border")
             div(class="card__rating")
                 div(class="rating")

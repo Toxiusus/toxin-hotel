@@ -1,0 +1,14 @@
+.card{
+    width: 270px;
+    height: 150px;
+
+    &__image{
+        width: 270px;
+        height: 151px;
+        border-radius: 4px 4px 0 0;
+    }
+
+    &__info{
+        padding: 16px 17px 19px 20px;
+    }
+}
