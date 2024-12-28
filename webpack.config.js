@@ -4,11 +4,18 @@ const PugPlugin = require("pug-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
+  output: {
+    path: path.join(__dirname, "dist/"),
+    publicPath: "/",
+  },
   plugins: [
     new PugPlugin({
+      pretty: "auto",
+      //☝🏽 Format HTML (only in dev mode)
       entry: {
-        index: path.resolve(__dirname, "src/pages/landing.pug"),
-        room: path.resolve(__dirname, "src/pages/search-room.pug"),
+        // Insert your PUG templates here
+        index: "./src/pages/landing.pug",
+        search: "./src/pages/search.pug",
       },
       js: {
         // JS output filename
@@ -20,11 +27,6 @@ module.exports = {
       },
     }),
     new FaviconsWebpackPlugin("./src/assets/favicon.ico"),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery",
-    }),
   ],
   module: {
     rules: [
