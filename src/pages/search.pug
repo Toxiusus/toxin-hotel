@@ -9,5 +9,10 @@ block content
   include header
   main
     section(class="room")
-      div(class="room-container")
+      div(class="room__container")
+        aside(class="room__filter")
+        div(class="room__selection")
+          div(class="room__selection-container")
+            div(class="room__cards")
+              +card
   include footer
