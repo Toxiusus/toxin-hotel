@@ -3,12 +3,6 @@
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
-  &__image {
-    width: 270px;
-    height: 151px;
-    border-radius: 4px 4px 0 0;
-  }
-
   &__info {
     padding: 16px 17px 19px 20px;
   }
@@ -20,11 +14,21 @@
   }
 }
 
+.slider{
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.slider img{
+  width: 100%;
+  display: none;
+}
 .data__number {
   &-symbol {
     color: rgb(31, 32, 65);
     font-family: Montserrat;
-    font-size: 19px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 0px;
     text-align: left;
@@ -78,27 +82,21 @@
 
 .rating {
   display: flex;
+  flex-direction: row-reverse;
+}
 
-  &__star {
-    position: relative;
-    display: inline-block; /* Используем inline-block для правильного отображения */
-    width: 24px;
-    height: 24px;
-    background: transparent;
-    clip-path: polygon(
-      50% 0%,
-      61% 35%,
-      98% 35%,
-      68% 57%,
-      79% 91%,
-      50% 70%,
-      21% 91%,
-      32% 57%,
-      2% 35%,
-      39% 35%
-    );
-    background: linear-gradient(180deg, rgb(188, 156, 255), rgb(139, 164, 249));
-  }
+.rating input[type="radio"] {
+  display: none;
+  opacity: 0;
+}
+
+.rating label {
+  color: lightgrey;
+  font-size: 24px;
+}
+
+.rating input:checked ~ label {
+  color: rgb(188, 156, 255);
 }
 
 .review {

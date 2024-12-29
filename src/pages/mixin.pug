@@ -78,26 +78,40 @@ mixin dropdown
                     span удалить
                 button(class="dropdown__button btn-reset")
                     span применить
-mixin card
+mixin card(value,luxury,price,review)
     div(class="card")
-        img(class="card__image" src="../images/room-page.png" alt="room")
+        div(class="slider")
+            div(class="slides")
+                img(class="slide" src="../images/room-page.png" alt="room")
+                img(class="slide" src="../images/room-page.png" alt="room")
+                img(class="slide" src="../images/room-page.png" alt="room")
+                img(class="slide" src="../images/room-page.png" alt="room")
+            button(class="btn-reset prev" onclick="prevSlide()") 
+                | &#10094;
+            button(class="btn-reset next" onclick="nextSlide()") 
+                | &#10095;
         div(class="card__info")
             div(class="card__data")
                 div(class="data__number")
                     span(class="data__number-symbol") №
-                    span(class="data__number-value") 888
-                    span(class="data__number-text") люкс
+                    span(class="data__number-value") #{value}
+                    span(class="data__number-text") #{luxury}
                 div(class="price")
-                    span(class="price__value") 9990Р
+                    span(class="price__value") #{price}
                     psan(class="price__text") в сутки
             div(class="card__border")
             div(class="card__rating")
                 div(class="rating")
-                    span(class="rating__star")
-                    span(class="rating__star")
-                    span(class="rating__star")
-                    span(class="rating__star")
-                    span(class="rating__star")
+                    input(type="radio" name="star" id="1")
+                    label(for="1") &#9733;
+                    input(type="radio" name="star" id="2")
+                    label(for="2") &#9733;
+                    input(type="radio" name="star" id="3")
+                    label(for="3") &#9733;
+                    input(type="radio" name="star" id="4")
+                    label(for="4") &#9733;
+                    input(type="radio" name="star" id="5")
+                    label(for="5") &#9733;
                 div(class="review")
-                    span(class="review__quantity") 145
+                    span(class="review__quantity") #{review}
                     span(class="review__text") Отзывов
