@@ -1,3 +1,50 @@
+.slider {
+  &__wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  &__box {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+  img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 4px;
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    a {
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      border: 1px solid rgb(255, 255, 255);
+      opacity: 0.75;
+      transition: opacity ease 250ms;
+    }
+    a:hover {
+      opacity: 1;
+    }
+  }
+}
+.slider__link-active {
+  background: rgb(255, 255, 255);
+}
+
 .card {
   width: 270px;
   border-radius: 4px;
@@ -14,16 +61,6 @@
   }
 }
 
-.slider{
-  position: relative;
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
-}
-.slider img{
-  width: 100%;
-  display: none;
-}
 .data__number {
   &-symbol {
     color: rgb(31, 32, 65);
